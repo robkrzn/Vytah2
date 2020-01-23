@@ -1,0 +1,15 @@
+vytah.c:22:6:Motor	32	static
+vytah.c:35:6:MotorStop	8	static
+vytah.c:44:6:LedOn	56	static
+vytah.c:56:6:LedOff	56	static
+vytah.c:70:6:LedAllOff	16	static
+vytah.c:86:6:DvereBrzda	104	static
+vytah.c:107:6:Dvere	104	static
+vytah.c:128:6:StlaceneTlacidloPoschodia	16	static
+vytah.c:154:6:PoschodieTransport	104	static
+vytah.c:208:6:StlaceneTlacidloVytahu	16	static
+vytah.c:235:12:ZisitPoziciuKabiny	80	static
+vytah.c:251:7:ZisitRychlostMotora	96	static
+vytah.c:270:6:vypisNaDisplej	24	static
+vytah.c:289:6:jeSnimac	16	static
+vytah.c:302:6:jeNaPoschodi	16	static

@@ -1,0 +1,32 @@
+\hypertarget{main_8c}{}\doxysection{source/main.c File Reference}
+\label{main_8c}\index{source/main.c@{source/main.c}}
+
+
+Hlavny spustaci subor.  
+
+
+{\ttfamily \#include \char`\"{}komunikacia.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vytah.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doplnky.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hlavny spustaci subor. 
+
+
+\begin{DoxyItemize}
+\item Funckia main inicializuje komunikiáciu cez L\+P\+S\+CI, vytvori datovu strukturu na ukladanie nacitanych dat \textquotesingle{}data\textquotesingle{}. Zaroven sa vypnu led diody ak su nejake aktivne z minuleho projektu a zastavi motor. V nekonejcej slucne sa vykona prve citanie a v nom sa overi ci je spravne crc. Ak je crc spravne vygeneruje sa ack na prijatu spravu. Nasledne data analytzuju. 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

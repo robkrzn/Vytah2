@@ -1,0 +1,190 @@
+\hypertarget{komunikacia_8h}{}\doxysection{source/komunikacia.h File Reference}
+\label{komunikacia_8h}\index{source/komunikacia.h@{source/komunikacia.h}}
+
+
+Subor obsahuje hlavickovy funkcii \mbox{\hyperlink{komunikacia_8c}{komunikacia.\+c}}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fsl\+\_\+device\+\_\+registers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fsl\+\_\+lpsci.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clock\+\_\+config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pin\+\_\+mux.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnacitane_data}{nacitane\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{komunikacia_8h_a748e69d615c835d8d9ae5f98af570532}{D\+E\+M\+O\+\_\+\+L\+P\+S\+CI}}~U\+A\+R\+T0
+\item 
+\#define \mbox{\hyperlink{komunikacia_8h_a0b3afd1134e408b124f3eda7abae56c4}{D\+E\+M\+O\+\_\+\+L\+P\+S\+C\+I\+\_\+\+C\+L\+K\+S\+RC}}~k\+C\+L\+O\+C\+K\+\_\+\+Core\+Sys\+Clk
+\item 
+\#define \mbox{\hyperlink{komunikacia_8h_a17ab487c275d39174ea8931961bdbb5d}{D\+E\+M\+O\+\_\+\+L\+P\+S\+C\+I\+\_\+\+C\+L\+K\+\_\+\+F\+R\+EQ}}~C\+L\+O\+C\+K\+\_\+\+Get\+Freq(k\+C\+L\+O\+C\+K\+\_\+\+Core\+Sys\+Clk)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structnacitane_data}{nacitane\+Data}} \mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{komunikacia_8h_af3e1b6b03ec49c64e70af5f3d66fa209}{komunikacia\+Init}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{komunikacia_8h_af3217da0c700da4888aa59dadbe72a22}{Crc\+Generator}} (uint8\+\_\+t $\ast$sprava, int velkost)
+\item 
+void \mbox{\hyperlink{komunikacia_8h_a0f0f50508fc1005459437206658d2aa2}{L\+P\+S\+C\+I\+Send\+String}} (uint8\+\_\+t $\ast$text, uint8\+\_\+t dlzka)
+\item 
+void \mbox{\hyperlink{komunikacia_8h_a6faec6843dc7f67d0ed86ed65228b595}{L\+P\+S\+C\+I\+Send\+Data}} (uint8\+\_\+t adresa, uint8\+\_\+t velkost, uint8\+\_\+t data)
+\item 
+void \mbox{\hyperlink{komunikacia_8h_aee89caa2dc3c5c1d6a6ff0d932805aca}{L\+P\+S\+C\+I\+Send\+Long\+Data}} (uint8\+\_\+t adresa, uint8\+\_\+t velkost, uint8\+\_\+t $\ast$data)
+\item 
+\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}} \mbox{\hyperlink{komunikacia_8h_a486e1ff5d6e7cb58a01f8279ff66d5bc}{L\+P\+S\+C\+I\+Recieve\+Data}} ()
+\item 
+void \mbox{\hyperlink{komunikacia_8h_afc2962c6a8cc7454c58fba9c1ce5af03}{Ack\+Generator}} (\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}} data)
+\item 
+void \mbox{\hyperlink{komunikacia_8h_a038fd978f03b056e34f8ee6da66f6eb7}{analyzuj\+Data}} (\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}} data)
+\item 
+bool \mbox{\hyperlink{komunikacia_8h_a71640c87c1944ac729ac9e88a071153c}{Ack\+Delay}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Subor obsahuje hlavickovy funkcii \mbox{\hyperlink{komunikacia_8c}{komunikacia.\+c}}. 
+
+Subor obsahuje hlavicky a pomocne premenne a datovu strukturu na ukladanie dat. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{komunikacia_8h_a748e69d615c835d8d9ae5f98af570532}\label{komunikacia_8h_a748e69d615c835d8d9ae5f98af570532}} 
+\index{komunikacia.h@{komunikacia.h}!DEMO\_LPSCI@{DEMO\_LPSCI}}
+\index{DEMO\_LPSCI@{DEMO\_LPSCI}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{DEMO\_LPSCI}{DEMO\_LPSCI}}
+{\footnotesize\ttfamily \#define D\+E\+M\+O\+\_\+\+L\+P\+S\+CI~U\+A\+R\+T0}
+
+\mbox{\Hypertarget{komunikacia_8h_a17ab487c275d39174ea8931961bdbb5d}\label{komunikacia_8h_a17ab487c275d39174ea8931961bdbb5d}} 
+\index{komunikacia.h@{komunikacia.h}!DEMO\_LPSCI\_CLK\_FREQ@{DEMO\_LPSCI\_CLK\_FREQ}}
+\index{DEMO\_LPSCI\_CLK\_FREQ@{DEMO\_LPSCI\_CLK\_FREQ}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{DEMO\_LPSCI\_CLK\_FREQ}{DEMO\_LPSCI\_CLK\_FREQ}}
+{\footnotesize\ttfamily \#define D\+E\+M\+O\+\_\+\+L\+P\+S\+C\+I\+\_\+\+C\+L\+K\+\_\+\+F\+R\+EQ~C\+L\+O\+C\+K\+\_\+\+Get\+Freq(k\+C\+L\+O\+C\+K\+\_\+\+Core\+Sys\+Clk)}
+
+\mbox{\Hypertarget{komunikacia_8h_a0b3afd1134e408b124f3eda7abae56c4}\label{komunikacia_8h_a0b3afd1134e408b124f3eda7abae56c4}} 
+\index{komunikacia.h@{komunikacia.h}!DEMO\_LPSCI\_CLKSRC@{DEMO\_LPSCI\_CLKSRC}}
+\index{DEMO\_LPSCI\_CLKSRC@{DEMO\_LPSCI\_CLKSRC}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{DEMO\_LPSCI\_CLKSRC}{DEMO\_LPSCI\_CLKSRC}}
+{\footnotesize\ttfamily \#define D\+E\+M\+O\+\_\+\+L\+P\+S\+C\+I\+\_\+\+C\+L\+K\+S\+RC~k\+C\+L\+O\+C\+K\+\_\+\+Core\+Sys\+Clk}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}\label{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}} 
+\index{komunikacia.h@{komunikacia.h}!NACITANEDATA@{NACITANEDATA}}
+\index{NACITANEDATA@{NACITANEDATA}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{NACITANEDATA}{NACITANEDATA}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnacitane_data}{nacitane\+Data}} \mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}}}
+
+Datova struktura na ulozenie nacitanych dat data\mbox{[}\mbox{]}-\/nacitana sprava odosielatel-\/odosielal spravy pocet\+Znakov-\/pocet znakov spravy typ\+Spravy -\/ 0-\/ data , 1 A\+CK crc\+Ok-\/ informacia o spravnosti C\+RC 1-\/ok 0 nie 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{komunikacia_8h_a71640c87c1944ac729ac9e88a071153c}\label{komunikacia_8h_a71640c87c1944ac729ac9e88a071153c}} 
+\index{komunikacia.h@{komunikacia.h}!AckDelay@{AckDelay}}
+\index{AckDelay@{AckDelay}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{AckDelay()}{AckDelay()}}
+{\footnotesize\ttfamily bool Ack\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funkcia na cakanie kym pride lubovolna odpoved na spravu. True ak prisla odpoved \mbox{\Hypertarget{komunikacia_8h_afc2962c6a8cc7454c58fba9c1ce5af03}\label{komunikacia_8h_afc2962c6a8cc7454c58fba9c1ce5af03}} 
+\index{komunikacia.h@{komunikacia.h}!AckGenerator@{AckGenerator}}
+\index{AckGenerator@{AckGenerator}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{AckGenerator()}{AckGenerator()}}
+{\footnotesize\ttfamily void Ack\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}}}]{data }\end{DoxyParamCaption})}
+
+Funkcia na generovanie odpovede na prijatu spravu. Odpoved sa generuje len na spravu zacinajucu 0xa0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & je nacitana struktura. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{komunikacia_8h_a038fd978f03b056e34f8ee6da66f6eb7}\label{komunikacia_8h_a038fd978f03b056e34f8ee6da66f6eb7}} 
+\index{komunikacia.h@{komunikacia.h}!analyzujData@{analyzujData}}
+\index{analyzujData@{analyzujData}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{analyzujData()}{analyzujData()}}
+{\footnotesize\ttfamily void analyzuj\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}}}]{data }\end{DoxyParamCaption})}
+
+Funkcia na alyzu precitanych dat v ktorych je informacia o stlacenom tlacidle. Na zaklade stlaceneho tlacidla sa volaju dalsie obsluzne funkcie.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & je datova struktura \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{komunikacia_8h_af3217da0c700da4888aa59dadbe72a22}\label{komunikacia_8h_af3217da0c700da4888aa59dadbe72a22}} 
+\index{komunikacia.h@{komunikacia.h}!CrcGenerator@{CrcGenerator}}
+\index{CrcGenerator@{CrcGenerator}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{CrcGenerator()}{CrcGenerator()}}
+{\footnotesize\ttfamily uint8\+\_\+t Crc\+Generator (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{sprava,  }\item[{int}]{velkost }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{komunikacia_8h_af3e1b6b03ec49c64e70af5f3d66fa209}\label{komunikacia_8h_af3e1b6b03ec49c64e70af5f3d66fa209}} 
+\index{komunikacia.h@{komunikacia.h}!komunikaciaInit@{komunikaciaInit}}
+\index{komunikaciaInit@{komunikaciaInit}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{komunikaciaInit()}{komunikaciaInit()}}
+{\footnotesize\ttfamily void komunikacia\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Hlavicky funkcii
+
+Inicializacia komunikacie \mbox{\Hypertarget{komunikacia_8h_a486e1ff5d6e7cb58a01f8279ff66d5bc}\label{komunikacia_8h_a486e1ff5d6e7cb58a01f8279ff66d5bc}} 
+\index{komunikacia.h@{komunikacia.h}!LPSCIRecieveData@{LPSCIRecieveData}}
+\index{LPSCIRecieveData@{LPSCIRecieveData}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{LPSCIRecieveData()}{LPSCIRecieveData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}} L\+P\+S\+C\+I\+Recieve\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Fukncia na citanie prijatych dat ktore sa navratia v podobe datovej struktury. Citanie zacne precitanim jedneho znaku a zistenim ci sa jedna o znak 0xa0 alebo 0xa1. Ak to tieto znaky niesu do strukury sa ulozi negativna odpoved a ukonci sa funcia. Ak to tieto znaku su pokracuje citanie dalsich znakov a postupne sa zapisuju. Pri 4. znaku, teda pri dlzke dat sa zisti ako dlha sprava bude a na zaklade toho sa predpoklada pocet opakovania citania a dlzka spravy. Po precitani vsetkych dat sa pole doteraz precitanych znakov sa cele pole posle do funcie na vypocet crc a vypocitana hodnota crc sa porovna s prijatou. Vysledok porovnania sa zapise do struktury. \mbox{\Hypertarget{komunikacia_8h_a6faec6843dc7f67d0ed86ed65228b595}\label{komunikacia_8h_a6faec6843dc7f67d0ed86ed65228b595}} 
+\index{komunikacia.h@{komunikacia.h}!LPSCISendData@{LPSCISendData}}
+\index{LPSCISendData@{LPSCISendData}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{LPSCISendData()}{LPSCISendData()}}
+{\footnotesize\ttfamily void L\+P\+S\+C\+I\+Send\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adresa,  }\item[{uint8\+\_\+t}]{velkost,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+Funkcia pre vytvorenie paketu s datami s dlzkou dat rovnych jedna.
+
+
+\begin{DoxyParams}{Parameters}
+{\em adresa} & primatela \\
+\hline
+{\em velkost} & velkost dat \\
+\hline
+{\em data} & odosielany znak \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{komunikacia_8h_aee89caa2dc3c5c1d6a6ff0d932805aca}\label{komunikacia_8h_aee89caa2dc3c5c1d6a6ff0d932805aca}} 
+\index{komunikacia.h@{komunikacia.h}!LPSCISendLongData@{LPSCISendLongData}}
+\index{LPSCISendLongData@{LPSCISendLongData}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{LPSCISendLongData()}{LPSCISendLongData()}}
+{\footnotesize\ttfamily void L\+P\+S\+C\+I\+Send\+Long\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adresa,  }\item[{uint8\+\_\+t}]{velkost,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+Funkcia pre vytvorenie paketu s lubovolnou dlzkou dat
+
+
+\begin{DoxyParams}{Parameters}
+{\em adresa} & zariadenia \\
+\hline
+{\em velkost} & dat \\
+\hline
+{\em $\ast$data} & pole dat \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{komunikacia_8h_a0f0f50508fc1005459437206658d2aa2}\label{komunikacia_8h_a0f0f50508fc1005459437206658d2aa2}} 
+\index{komunikacia.h@{komunikacia.h}!LPSCISendString@{LPSCISendString}}
+\index{LPSCISendString@{LPSCISendString}!komunikacia.h@{komunikacia.h}}
+\doxysubsubsection{\texorpdfstring{LPSCISendString()}{LPSCISendString()}}
+{\footnotesize\ttfamily void L\+P\+S\+C\+I\+Send\+String (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{text,  }\item[{uint8\+\_\+t}]{dlzka }\end{DoxyParamCaption})}
+
+Funkcia na odosielanie dat 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$text} & je pole znakov \\
+\hline
+{\em dlzka} & je dlzka znakov \\
+\hline
+\end{DoxyParams}

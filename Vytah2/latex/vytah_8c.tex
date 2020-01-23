@@ -1,0 +1,228 @@
+\hypertarget{vytah_8c}{}\doxysection{source/vytah.c File Reference}
+\label{vytah_8c}\index{source/vytah.c@{source/vytah.c}}
+
+
+Subor pre \mbox{\hyperlink{vytah_8c}{vytah.\+c}}.  
+
+
+{\ttfamily \#include \char`\"{}vytah.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vytah_8c_acde20b9c179d3f7a8dc1a6387b918131}{Motor}} (int rychlost)
+\item 
+void \mbox{\hyperlink{vytah_8c_a29eccb7aa78a66f8d00f26d61fe32f68}{Motor\+Stop}} ()
+\item 
+void \mbox{\hyperlink{vytah_8c_ad011f8241656993d82f0f6548b8d569b}{Led\+On}} (int8\+\_\+t led)
+\item 
+void \mbox{\hyperlink{vytah_8c_a4f015b9920c65db2a8c4dd2ccab88a45}{Led\+Off}} (int8\+\_\+t led)
+\item 
+void \mbox{\hyperlink{vytah_8c_a0f11c3568649763535402d819a02bd13}{Led\+All\+Off}} ()
+\item 
+void \mbox{\hyperlink{vytah_8c_abbd18b52b497ab96eb00e685340bb70e}{Dvere\+Brzda}} (bool stav)
+\item 
+void \mbox{\hyperlink{vytah_8c_a873267ffb6250fa28360b51e5adce090}{Dvere}} (bool stav)
+\item 
+void \mbox{\hyperlink{vytah_8c_af10a63f82d45b6a3ee9de71c50d7e7a5}{Stlacene\+Tlacidlo\+Poschodia}} (\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}} data)
+\item 
+void \mbox{\hyperlink{vytah_8c_aa4a60889403ee63318b86f4b0f1928d2}{Poschodie\+Transport}} (uint8\+\_\+t snimac\+Poschodia, int poloha\+Poschodia, uint8\+\_\+t Led\+Poschodia)
+\item 
+void \mbox{\hyperlink{vytah_8c_a55bf32e55db7526bed94157d5c0bfb0b}{Stlacene\+Tlacidlo\+Vytahu}} (\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}} data)
+\item 
+signed int \mbox{\hyperlink{vytah_8c_afa2a7b1e99693fbb214ef79c9b48ae11}{Zisit\+Poziciu\+Kabiny}} ()
+\item 
+float \mbox{\hyperlink{vytah_8c_ab3c6b1ab0e330376bfa7be3a70d1f2d1}{Zisit\+Rychlost\+Motora}} ()
+\item 
+void \mbox{\hyperlink{vytah_8c_aed0a085be37b27804d2baea15a8d6b66}{vypis\+Na\+Displej}} (int smer, int poschodie)
+\item 
+bool \mbox{\hyperlink{vytah_8c_a18aabde5a054677af729b3a1d91e1424}{je\+Snimac}} (\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}} sprava)
+\item 
+bool \mbox{\hyperlink{vytah_8c_a5d7f39e7d0fc143f786ab75942e6d910}{je\+Na\+Poschodi}} (signed int poloha, int poloha\+Poschodia)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Subor pre \mbox{\hyperlink{vytah_8c}{vytah.\+c}}. 
+
+Nachadzaju sa tu funkcie na pracu s prvkami vytahu. Su to funkcie na ovladanie prvkov, riadenie vytahu, vytvaranie sprav vytahu. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vytah_8c_a873267ffb6250fa28360b51e5adce090}\label{vytah_8c_a873267ffb6250fa28360b51e5adce090}} 
+\index{vytah.c@{vytah.c}!Dvere@{Dvere}}
+\index{Dvere@{Dvere}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{Dvere()}{Dvere()}}
+{\footnotesize\ttfamily void Dvere (\begin{DoxyParamCaption}\item[{bool}]{stav }\end{DoxyParamCaption})}
+
+Funkcia na otvorenie / zatvorenie dveri kabiny.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stav} & je pozadovany stav pricom true -\/ 1 -\/ zodpoveda zavretiu false -\/ 0 -\/ zodpoveda otvoreniu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_abbd18b52b497ab96eb00e685340bb70e}\label{vytah_8c_abbd18b52b497ab96eb00e685340bb70e}} 
+\index{vytah.c@{vytah.c}!DvereBrzda@{DvereBrzda}}
+\index{DvereBrzda@{DvereBrzda}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{DvereBrzda()}{DvereBrzda()}}
+{\footnotesize\ttfamily void Dvere\+Brzda (\begin{DoxyParamCaption}\item[{bool}]{stav }\end{DoxyParamCaption})}
+
+Funkcia na zabrzdenie bezpecnostnej brzdy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stav} & je pozadovany stav pricom true -\/ 1 -\/ zodpoveda zamknutiu false -\/ 0 -\/ zodpoveda odomknutiu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_a5d7f39e7d0fc143f786ab75942e6d910}\label{vytah_8c_a5d7f39e7d0fc143f786ab75942e6d910}} 
+\index{vytah.c@{vytah.c}!jeNaPoschodi@{jeNaPoschodi}}
+\index{jeNaPoschodi@{jeNaPoschodi}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{jeNaPoschodi()}{jeNaPoschodi()}}
+{\footnotesize\ttfamily bool je\+Na\+Poschodi (\begin{DoxyParamCaption}\item[{signed int}]{poloha,  }\item[{int}]{poloha\+Poschodia }\end{DoxyParamCaption})}
+
+Funkcia na zistenie ci sa kabina vytahu nachaduza na pozadovanom poschodi. True -\/ ak sa nachadza na pozadovanom poschodi / falsek ak nie
+
+
+\begin{DoxyParams}{Parameters}
+{\em poloha} & je informacia o sucasnej polohe zistena od vytahu \\
+\hline
+{\em poloha\+Poschodia} & je idealna poloha poschodia. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_a18aabde5a054677af729b3a1d91e1424}\label{vytah_8c_a18aabde5a054677af729b3a1d91e1424}} 
+\index{vytah.c@{vytah.c}!jeSnimac@{jeSnimac}}
+\index{jeSnimac@{jeSnimac}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{jeSnimac()}{jeSnimac()}}
+{\footnotesize\ttfamily bool je\+Snimac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}}}]{sprava }\end{DoxyParamCaption})}
+
+Funkcia pre zistenie ci precitana sprava je od snimaca polohy kabiny. True ak je sprava od snimaca / false ak nie
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprava} & je datova struktura s obsahom dat \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_a0f11c3568649763535402d819a02bd13}\label{vytah_8c_a0f11c3568649763535402d819a02bd13}} 
+\index{vytah.c@{vytah.c}!LedAllOff@{LedAllOff}}
+\index{LedAllOff@{LedAllOff}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{LedAllOff()}{LedAllOff()}}
+{\footnotesize\ttfamily void Led\+All\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funkcia na vypnutie vsetkych dostupnych led diod. \mbox{\Hypertarget{vytah_8c_a4f015b9920c65db2a8c4dd2ccab88a45}\label{vytah_8c_a4f015b9920c65db2a8c4dd2ccab88a45}} 
+\index{vytah.c@{vytah.c}!LedOff@{LedOff}}
+\index{LedOff@{LedOff}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{LedOff()}{LedOff()}}
+{\footnotesize\ttfamily void Led\+Off (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{led }\end{DoxyParamCaption})}
+
+Funkcia na vypnutie led diody.
+
+
+\begin{DoxyParams}{Parameters}
+{\em led} & je ozacenie diody v hex tvare. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_ad011f8241656993d82f0f6548b8d569b}\label{vytah_8c_ad011f8241656993d82f0f6548b8d569b}} 
+\index{vytah.c@{vytah.c}!LedOn@{LedOn}}
+\index{LedOn@{LedOn}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{LedOn()}{LedOn()}}
+{\footnotesize\ttfamily void Led\+On (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{led }\end{DoxyParamCaption})}
+
+Funkcia na zapnutie led diody.
+
+
+\begin{DoxyParams}{Parameters}
+{\em led} & je ozacenie diody v hex tvare. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_acde20b9c179d3f7a8dc1a6387b918131}\label{vytah_8c_acde20b9c179d3f7a8dc1a6387b918131}} 
+\index{vytah.c@{vytah.c}!Motor@{Motor}}
+\index{Motor@{Motor}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{Motor()}{Motor()}}
+{\footnotesize\ttfamily void Motor (\begin{DoxyParamCaption}\item[{int}]{rychlost }\end{DoxyParamCaption})}
+
+Funkcia motor sluzi na ovladanie rychlosti motora.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rychlost} & ktora je nasledne prevedena na datovy paket \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_a29eccb7aa78a66f8d00f26d61fe32f68}\label{vytah_8c_a29eccb7aa78a66f8d00f26d61fe32f68}} 
+\index{vytah.c@{vytah.c}!MotorStop@{MotorStop}}
+\index{MotorStop@{MotorStop}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{MotorStop()}{MotorStop()}}
+{\footnotesize\ttfamily void Motor\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funkcia na vytvorenie spravy pre zastavenie chodu motora. \mbox{\Hypertarget{vytah_8c_aa4a60889403ee63318b86f4b0f1928d2}\label{vytah_8c_aa4a60889403ee63318b86f4b0f1928d2}} 
+\index{vytah.c@{vytah.c}!PoschodieTransport@{PoschodieTransport}}
+\index{PoschodieTransport@{PoschodieTransport}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{PoschodieTransport()}{PoschodieTransport()}}
+{\footnotesize\ttfamily void Poschodie\+Transport (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{snimac\+Poschodia,  }\item[{int}]{poloha\+Poschodia,  }\item[{uint8\+\_\+t}]{Led\+Poschodia }\end{DoxyParamCaption})}
+
+Funkcia ktora sa stara o pohyb kabiny na pozadovane poschodie. Ak je vytah na pozadovanom poschodi nevykona sa ziadna akcia. Ak nieje na pozadovanom poschodi rozsvieti sa led dioda pozadovaneho poschodia, uzavru sa dvere, a zisti sa smer aky sa ma kabina vydat. Nasledne sa rychlost motora nastavi na 80 pozadovanim smerom a neustale sa citaju data ci sa uz nachadya sprava od poschodia na ktore sa ma vytah vydat. Ak je takyto snimac najdeny nastavi sa rychlost na 15 a ak sa najde snimac v tesnej blizskosti tak sa kabina zastavi a transport kabiny je dokonceny.
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em snimac\+Poschodia} & je snimac pozadovaneho poschodia \\
+\hline
+{\em poloha\+Poschodia} & poloha poschodia v tvare definovanom pre polohu \\
+\hline
+{\em Led\+Poschodia} & led dioda pozadovaneho poschodia \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\mbox{\Hypertarget{vytah_8c_af10a63f82d45b6a3ee9de71c50d7e7a5}\label{vytah_8c_af10a63f82d45b6a3ee9de71c50d7e7a5}} 
+\index{vytah.c@{vytah.c}!StlaceneTlacidloPoschodia@{StlaceneTlacidloPoschodia}}
+\index{StlaceneTlacidloPoschodia@{StlaceneTlacidloPoschodia}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{StlaceneTlacidloPoschodia()}{StlaceneTlacidloPoschodia()}}
+{\footnotesize\ttfamily void Stlacene\+Tlacidlo\+Poschodia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}}}]{data }\end{DoxyParamCaption})}
+
+Funkcia na detekovanie toho ktore tlacidlo na poschodi bolo stlacene. Po detekcii zavola pohyb kabiny.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & je datova struktura s obsahom dat zo spravy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_a55bf32e55db7526bed94157d5c0bfb0b}\label{vytah_8c_a55bf32e55db7526bed94157d5c0bfb0b}} 
+\index{vytah.c@{vytah.c}!StlaceneTlacidloVytahu@{StlaceneTlacidloVytahu}}
+\index{StlaceneTlacidloVytahu@{StlaceneTlacidloVytahu}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{StlaceneTlacidloVytahu()}{StlaceneTlacidloVytahu()}}
+{\footnotesize\ttfamily void Stlacene\+Tlacidlo\+Vytahu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{komunikacia_8h_a3740a07eda622707fb60d1cf0ce6fc24}{N\+A\+C\+I\+T\+A\+N\+E\+D\+A\+TA}}}]{data }\end{DoxyParamCaption})}
+
+Funkcia na detekovanie toho ktore tlacidlo vo vytahu bolo stlacene. Po detekcii zavola pohyb kabiny.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & datova struktura s obsahom dat \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_aed0a085be37b27804d2baea15a8d6b66}\label{vytah_8c_aed0a085be37b27804d2baea15a8d6b66}} 
+\index{vytah.c@{vytah.c}!vypisNaDisplej@{vypisNaDisplej}}
+\index{vypisNaDisplej@{vypisNaDisplej}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{vypisNaDisplej()}{vypisNaDisplej()}}
+{\footnotesize\ttfamily void vypis\+Na\+Displej (\begin{DoxyParamCaption}\item[{int}]{smer,  }\item[{int}]{poschodie }\end{DoxyParamCaption})}
+
+Funkcia ktora sluzi na vypis udajov na displej.
+
+
+\begin{DoxyParams}{Parameters}
+{\em smer} & pre oznacenie smeru pohybu \\
+\hline
+{\em poschodie} & je cislo poschodia \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vytah_8c_afa2a7b1e99693fbb214ef79c9b48ae11}\label{vytah_8c_afa2a7b1e99693fbb214ef79c9b48ae11}} 
+\index{vytah.c@{vytah.c}!ZisitPoziciuKabiny@{ZisitPoziciuKabiny}}
+\index{ZisitPoziciuKabiny@{ZisitPoziciuKabiny}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{ZisitPoziciuKabiny()}{ZisitPoziciuKabiny()}}
+{\footnotesize\ttfamily signed int Zisit\+Poziciu\+Kabiny (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funkcia na zistenie sucasnej polohy vytahu Poloha je navratova hodnota sucasnej polohy kabiny \mbox{\Hypertarget{vytah_8c_ab3c6b1ab0e330376bfa7be3a70d1f2d1}\label{vytah_8c_ab3c6b1ab0e330376bfa7be3a70d1f2d1}} 
+\index{vytah.c@{vytah.c}!ZisitRychlostMotora@{ZisitRychlostMotora}}
+\index{ZisitRychlostMotora@{ZisitRychlostMotora}!vytah.c@{vytah.c}}
+\doxysubsubsection{\texorpdfstring{ZisitRychlostMotora()}{ZisitRychlostMotora()}}
+{\footnotesize\ttfamily float Zisit\+Rychlost\+Motora (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funkcia na zistenie sucasnej rychlosti vytahu rychlost je sucasna rychlost kabiny 
